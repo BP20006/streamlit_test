@@ -1,21 +1,9 @@
 import streamlit as st
-from PIL import Image
-import numpy as np
-import cv2
+import pandas as pd
 
-st.title("Image Converter")
-  
-uploaded_file = st.file_uploader('Upload your image file.')
-  
-if uploaded_file is not None:
-    image = Image.open(uploaded_file)
-    image = np.array(image)
+if __name__ == "__main__":
 
-    st.subheader('Uploaded image')
-    st.image(image)
+    df = pd.read_csv('data/2024-12-11.csv', sep=',')
 
-    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-    st.subheader('Converted image')
-    st.image(gray_image)
-  
+    st.header('arxivチェック支援サイト')
+    st.write(df)
