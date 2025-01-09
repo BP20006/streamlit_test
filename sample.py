@@ -4,8 +4,7 @@ import pyperclip
 
 def create_ChatGPT_script(title, abstract, url):
     # フォーマットに埋め込む
-    script = f"""
-まず、下記の文章を日本語で短く要約したものを「日本語概要」とラベル付けしてください。
+    script = f"""まず、下記の文章を日本語で短く要約したものを「日本語概要」とラベル付けしてください。
 {abstract}
 次に、以下のフォーマットに「日本語概要」を加えてそれのみを出力してください。
 タイトル：
@@ -13,8 +12,7 @@ def create_ChatGPT_script(title, abstract, url):
 概要：
 「日本語概要」
 URL：
-{url}
-"""
+{url}"""
 
     return script
 
