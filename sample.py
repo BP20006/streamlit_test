@@ -63,7 +63,7 @@ for index, row in data.iterrows():
         # ChatGPTスクリプト作成（仮の関数）
         for_chat_GPT = create_ChatGPT_script(row['title'], row['abstract'], "sample.com")
 
-        if st.button("ChatGPTスクリプト", key=f"button_{index}"):
-            pyperclip.copy(for_chat_GPT)  # 文字列をクリップボードにコピー
-            st.success("文字列がクリップボードにコピーされました！")
-
+        st.text_area("ChatGPTスクリプト", for_chat_GPT, height=150)
+        # if st.button("ChatGPTスクリプト", key=f"button_{index}"):
+        #     pyperclip.copy(for_chat_GPT)  # 文字列をクリップボードにコピー
+        #     st.success("文字列がクリップボードにコピーされました！")
