@@ -58,7 +58,7 @@ for index, row in data.iterrows():
         # 最初はtitle_transを表示
         st.write(f"**Title**: {row['title']}")
         st.write(f"**Abstract**: {row['abstract']}")
-        st.write(f"**Abstract Translated**: {row['abst_trans']}")
+        st.write(f"**Abstract Translated**: {row['sbstract_stans']}")
 
         # ChatGPTスクリプト作成（仮の関数）
         for_chat_GPT = create_ChatGPT_script(row['title'], row['abstract'], "sample.com")
