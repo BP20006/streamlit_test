@@ -20,13 +20,20 @@ URL：
 st.sidebar.markdown("[ChatGPTのリンク](https://chat.openai.com)")
 
 # サイドバーでCSVファイルを選択
-csv_files = {
-    "12/11": "contents/data/2024-12-11.csv",
-    "12/12": "contents/data/2024-12-11.csv",
-    "12/13": "contents/data/2024-12-11.csv",
-    "12/14": "contents/data/2024-12-11.csv",
-    "12/15": "contents/data/2024-12-11.csv"
-}
+csv_files = {}
+today = datetime.today()
+
+for i in range(5):
+    target_date = (today - timedelta(days=2+i)).strftime('%Y-%m-%d')
+    csv_files['target_date'] = f'contents/data/{target_date}.csv'
+
+# csv_files = {
+#     "12/11": "contents/data/2024-12-11.csv",
+#     "12/12": "contents/data/2024-12-11.csv",
+#     "12/13": "contents/data/2024-12-11.csv",
+#     "12/14": "contents/data/2024-12-11.csv",
+#     "12/15": "contents/data/2024-12-11.csv"
+# }
 
 selected_file = st.sidebar.selectbox("表示する日にちを選んでください", list(csv_files.keys()))
 
