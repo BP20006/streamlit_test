@@ -53,7 +53,7 @@ st.text('5. Slackで共有')
 
 # 行ごとに情報を取得
 for index, row in data.iterrows():
-    title_trans = row['title_trans'].replace("タイトル：", "")
+    title_trans = row['authors_trans'].replace("タイトル：", "")
     with st.expander(f"{index + 1} : {title_trans}"):
         # 最初はtitle_transを表示
         st.write(f"**Title**: {row['title']}")
