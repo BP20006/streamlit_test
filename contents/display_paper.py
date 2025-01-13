@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pyperclip
+from datetime import datetime, timedelta
 
 def create_ChatGPT_script(title, abstract, url):
     # フォーマットに埋め込む
