@@ -26,7 +26,7 @@ today = datetime.today()
 
 for i in range(5):
     target_date = (today - timedelta(days=2+i)).strftime('%Y-%m-%d')
-    csv_files['target_date'] = f'contents/data/{target_date}.csv'
+    csv_files[target_date] = f'contents/data/{target_date}.csv'
 
 # csv_files = {
 #     "12/11": "contents/data/2024-12-11.csv",
