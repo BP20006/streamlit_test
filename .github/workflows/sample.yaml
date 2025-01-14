@@ -2,7 +2,7 @@ name: Sample
 
 on:
   push:
-    branches: 
+    branches:
       - main
   workflow_dispatch:
 
@@ -10,7 +10,7 @@ jobs:
   numpy-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2  # リポジトリをチェックアウト
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
@@ -19,4 +19,12 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run Python
-        run: python contents/data/create_paper_csv.py
+        run: python contents/data/create_paper_csv.py  # Pythonコードの実行
+      - name: Commit and Push CSV to Repo
+        run: |
+          # CSVファイルをリポジトリにコミット
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add *.csv  # 生成されたCSVファイルをステージ
+          git commit -m "Add generated CSV file"  # コミットメッセージ
+          git push  # リポジトリにプッシュ
