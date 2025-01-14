@@ -19,4 +19,4 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run Python
-        run: python contents/data/crate_paper_csv.py
+        run: python contents/data/create_paper_csv.py
