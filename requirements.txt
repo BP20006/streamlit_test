@@ -3,3 +3,8 @@ opencv-python-headless==4.9.0.80
 pillow==10.3.0
 pyperclip
 datetime
+googletrans
+csv
+requests
+beautifulsoup
+datetime
