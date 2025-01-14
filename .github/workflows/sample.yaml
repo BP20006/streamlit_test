@@ -25,10 +25,6 @@ jobs:
           # CSVファイルをリポジトリにコミット
           git config --global user.name "BP20006"
           git config --global user.email "bp20006@shibaura-it.ac.jp"
-          
-          # リモートの変更を取り込む
-          git pull --rebase origin main  # リモートのmainブランチの変更をリベース
-
-          git add output/*.csv  # outputフォルダ内のCSVファイルをステージ
+          git add *.csv  # 生成されたCSVファイルをステージ
           git commit -m "Add generated CSV file"  # コミットメッセージ
           git push  # リポジトリにプッシュ
