@@ -29,8 +29,8 @@ def translate_paper_info(paper_info):
 def create_papers_csv(today)
   # arxivのURL（検索単語は"quantum physics"）
   # １ページの論文数は50
-  target_date = (today - timedelta(days=4)).strftime('%Y-%m-%d')
-  next_date = (today - timedelta(days=3)).strftime('%Y-%m-%d')
+  target_date = (today - timedelta(days=5)).strftime('%Y-%m-%d')
+  next_date = (today - timedelta(days=4)).strftime('%Y-%m-%d')
   pagesize = 200
   start_num = 0
   arxiv_url = f'https://arxiv.org/search/advanced?advanced=&terms-0-operator=AND&terms-0-term=quantum+physics&terms-0-field=all&classification-physics_archives=all&classification-include_cross_list=include&date-year=&date-filter_by=date_range&date-from_date={target_date}&date-to_date={next_date}&date-date_type=submitted_date&abstracts=show&size={pagesize}&order=-announced_date_first&start={start_num}'
