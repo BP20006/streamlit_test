@@ -25,6 +25,6 @@ jobs:
           # CSVファイルをリポジトリにコミット
           git config --global user.name "BP20006"
           git config --global user.email "bp20006@shibaura-it.ac.jp"
-          git add *.csv  # 生成されたCSVファイルをステージ
+          git add contents/data/*.csv  # 生成されたCSVファイルをステージ
           git commit -m "Add generated CSV file"  # コミットメッセージ
           git push  # リポジトリにプッシュ
