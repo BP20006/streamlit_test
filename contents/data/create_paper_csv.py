@@ -31,7 +31,7 @@ def find_paper_info(paper):
         paper_title = paper_soup.find("h1", class_="title mathjax").text.strip()
         paper_abstract = paper_soup.find("blockquote", class_="abstract mathjax").text.strip()
 
-        return [paper_author, paper_title, paper_abstract]
+        return [paper_author[8:], paper_title[6:], paper_abstract[9:]]
     except Exception as e:
         print(f"Error fetching paper info: {e}")
         return ["Error", "Error", "Error"]
