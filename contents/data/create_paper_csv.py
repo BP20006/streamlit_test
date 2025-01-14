@@ -53,7 +53,7 @@ async def create_papers_csv(today):
     csv_filename = f"contents/data/{target_date}.csv"
     with open(csv_filename, mode="w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        header = ["title", "authors", "abstract", "authors_trans", "abstract_trans"]
+        header = ["authors", "title", "abstract", "authors_trans", "abstract_trans"]
         writer.writerow(header)
 
         # HTMLを取得
