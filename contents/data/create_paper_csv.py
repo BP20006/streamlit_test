@@ -38,8 +38,8 @@ def find_paper_info(paper):
 
 async def create_papers_csv(today):
     # arXivのURL（検索単語は"quantum physics"）
-    target_date = (today - timedelta(days=3)).strftime('%Y-%m-%d')
-    next_date = (today - timedelta(days=2)).strftime('%Y-%m-%d')
+    target_date = (today - timedelta(days=2)).strftime('%Y-%m-%d')
+    next_date = (today - timedelta(days=1)).strftime('%Y-%m-%d')
     pagesize = 200
     start_num = 0
     arxiv_url = (
