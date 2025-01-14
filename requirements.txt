@@ -6,5 +6,5 @@ datetime
 googletrans
 csv
 requests
-beautifulsoup
+beautifulsoup4
 datetime
