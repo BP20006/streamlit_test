@@ -19,12 +19,17 @@ def find_paper_ifno(paper):
   return [paper_author, paper_title.replace('\n', ''), paper_abst.replace('\n', '')]
 
 
-def translate_paper_info(paper_info):
-  translator = Translator()
-  paper_info.append(translator.translate(paper_info[1], src='en', dest='ja').text)
-  paper_info.append(translator.translate(paper_info[2], src='en', dest='ja').text)
+async def translate_paper_info(paper_info):
+    translator = Translator()
+    # paper_info[1] と paper_info[2] を非同期で翻訳
+    translated_text1 = await translator.translate(paper_info[1], src='en', dest='ja')
+    translated_text2 = await translator.translate(paper_info[2], src='en', dest='ja')
 
-  return paper_info
+    # 結果をリストに追加
+    paper_info.append(translated_text1.text)
+    paper_info.append(translated_text2.text)
+
+    return paper_info
 
 def create_papers_csv(today):
   # arxivのURL（検索単語は"quantum physics"）
