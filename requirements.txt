@@ -4,7 +4,6 @@ pillow==10.3.0
 pyperclip
 datetime
 googletrans
-csv
 requests
 beautifulsoup4
 datetime
