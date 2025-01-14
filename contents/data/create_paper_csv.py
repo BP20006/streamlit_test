@@ -26,7 +26,7 @@ def translate_paper_info(paper_info):
 
   return paper_info
 
-def create_papers_csv(today)
+def create_papers_csv(today):
   # arxivのURL（検索単語は"quantum physics"）
   # １ページの論文数は50
   target_date = (today - timedelta(days=5)).strftime('%Y-%m-%d')
