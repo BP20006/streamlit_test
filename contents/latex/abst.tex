@@ -1,0 +1,91 @@
+\documentclass[9pt,a4j]{jsarticle} %9pt,A4判
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{ascmac}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{here}
+\usepackage{fancybox}
+\usepackage{cases}
+\usepackage{bm}
+\usepackage{array}
+\usepackage{comment}
+\usepackage{okumacro} %ルビの挿入
+%
+%--余白等の調整--
+\usepackage[]{multicol}
+\usepackage[top=20mm,bottom=20mm,left=23mm,right=23mm]{geometry}%全ページの余白の定義
+\usepackage{titlesec}%セクション等大きさパッケージ
+%\newcommand{\beforesection}[1]{\vspace{-#1mm}}%section前余白設定用タグの宣言　(VV)
+\pagestyle{empty} %頁番号の消去
+%
+%---------------------
+\newtheorem{thm}{定理}[subsection]
+\newtheorem{prop}[thm]{命題}
+\newtheorem{lemma}[thm]{補題}
+\newtheorem{exercise}{演習問題}
+\newtheorem{example}{例}
+\newtheorem*{example*}{例}
+\newtheorem{lemm}{補題}
+\newtheorem{cor}{系}
+\newtheorem{defi}[subsubsection]{定義}
+\newtheorem*{defi*}{定義}
+\renewcommand\proofname{\textbf{証明}}
+%
+%--Dirac表記のコマンド等---
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\norm}[1]{|| #1 ||}
+\newcommand{\bk}[2]{ \langle#1|#2\rangle }
+\newcommand{\kb}[2]{ |#1\rangle\langle#2| }
+\newcommand{\Hi}{\mathcal{H}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+%
+%--式番号を章毎にする--
+%
+\makeatletter
+\@addtoreset{equation}{section}
+\def\theequation{\thesection.\arabic{equation}}
+\makeatother
+%%
+\renewcommand{\abstractname}{} %abstractのタイトルを消す
+\begin{document}
+%
+%%--タイトル・著者--
+\begin{flushright}
+2021年2月6日
+\end{flushright}
+\begin{center}
+\LARGE{タイトル}\\
+\large{English Title}
+\end{center}
+\noindent
+システム理工学専攻 \hfill MF19000 \ \ruby{苗字}{みょうじ}\ \ruby{名前}{なまえ} \\
+量子情報システム研究 \hfill 指導教員 \ 木村\ 元\ \ \ \ 
+%
+%--abstruct-----------------------
+\begin{abstract}
+area for writing abstract.
+\end{abstract}
+%
+%--本文--------------------------
+%\beforesection{1}%セクション前余白縮小　(VV)
+\begin{multicols}{2}%2段組み
+\section{セクション}
+本文。変更の可能性があるので、フォーマット指定は必ず確認すること。\\
+2段組み\\
+余白。上下20mm,左右23mm。\\
+文字9pt、目安は9～10.5pt\\
+フォント埋め込み\\
+ページ番号は入れない
+
+%
+%--引用--------------------------
+%\begin{thebibliography}{20}
+% \bibitem{}
+%\end{thebibliography}
+%
+\end{multicols}
+\end{document}
