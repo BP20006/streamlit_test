@@ -95,5 +95,21 @@ for i, label in enumerate(cases_labels):
 
 # 場合分け---------------------------------------
 
+# テンプレートのダウンロード---------------------------------------
+template = st.expander('テンプレートのダウンロード')
+
+with open("contents/latex/abst.tex", "rb") as file:
+    img_data = file.read()
+
+# ダウンロードボタン
+template.download_button(
+    label="概要",
+    data=img_data,
+    file_name="abstract.tex",
+    mime="application/x-tex"
+)
+
+# テンプレートのダウンロード---------------------------------------
+
 # text_areaでSession Stateの内容を表示
 textarea_container.text_area("結果", st.session_state["display_text"], height=200)
