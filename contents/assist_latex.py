@@ -101,9 +101,19 @@ template = st.expander('テンプレートのダウンロード')
 with open("contents/latex/abst.tex", "rb") as file:
     img_data = file.read()
 
+columns = template.columns(2)
+
 # ダウンロードボタン
-template.download_button(
+columns[0].download_button(
     label="概要",
+    data=img_data,
+    file_name="abstract.tex",
+    mime="application/x-tex"
+)
+
+# ダウンロードボタン
+columns[1].download_button(
+    label="論文（大学用）",
     data=img_data,
     file_name="abstract.tex",
     mime="application/x-tex"
